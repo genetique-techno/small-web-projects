@@ -1,0 +1,120 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.center {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+#top-strip {
+  position: absolute;
+  display: block;
+  margin: 0px auto;
+  top: 0px;
+  width: 650px;
+  height: 10px;
+  background: #00948E;
+  text-align: center;
+}
+
+#title-block::first-line {
+  line-height: 0.8;
+  font-size: 95pt;
+}
+
+#title-block {
+  position: absolute;
+  display: block;
+  margin: 490px auto 0px auto;
+  width: 650px;
+  height: 250px;
+
+  background: #00948E;
+  text-align: center;
+  font-family: Garamond;
+  font-size: 65pt;
+  line-height: 0;
+  font-weight: 200;
+  // vertical-align: middle;
+  color: white;
+}
+
+
+
+#bottom-strip {
+  position: absolute;
+  display: block;
+  width: 650px;
+  margin: 850px auto 0px auto;
+  text-align: center;
+}
+
+ul, li {
+  display: inline;
+}
+
+li:nth-child(2) {
+  font-size: 3em;
+}
+
+
+.logo {
+  width: 100px;
+}
+
+
+.bold {
+  font-weight: bold;
+  font-family: Arial;
+}
+
+.ital {
+  font-style: italic;
+  font-size: 14pt;
+}
+
+#butterfly {
+  position: absolute;
+  top: 75px;
+  left: 45px;
+  width: 500px;
+  height: 500px;
+  background-image: url(javascript_good_parts/bfly.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  transform-origin: 50%; 
+  transform: rotate(25deg);
+  // transform: skew(30deg 30deg);
+}
+
+#lh {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50%;
+  height: 100%;
+  display: inline;
+  background-image: url(javascript_good_parts/bfly.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200%;
+}
+
+#rh {
+  display: absolute;
+  top: 0px;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  background-image: url(javascript_good_parts/bfly.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200%;
+}

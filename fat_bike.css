@@ -1,0 +1,241 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis:500|Lobster|Oxygen:700|Fjalla+One);
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+body {
+	background-color: #550000 ;
+}
+
+div {
+	top: 111px;
+	left: 344px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;	
+	color: #F23011;
+	font-family: Oxygen, Garamond;
+	font-size: 16pt;
+	text-shadow: 1px 1px 3px black;	
+	border-color: #F23011 ;
+}
+.container {
+	position: relative;
+	height: 600px;
+	width: 800px;
+	margin: auto;
+	background-image: url(fat_bike/muk.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.title {
+	font-family: Lobster;
+	font-size: 80pt;
+	text-shadow: 4px 4px 6px #250F0A;
+	color: white;	
+	margin: 0px;
+	transform: rotate(-2deg);
+}
+
+.title:first-child {
+	position: relative;
+	top: -3px;
+	left: -118px;
+	font-size: 63pt;
+}
+
+.title:nth-child(2) {
+	position: relative;
+	top: -33px;
+	left: -58px;
+}
+
+.wheel_inf {
+	position: absolute;
+	display: none;
+	width: 74px;
+	height: 74px;
+	border-radius: 8px;
+	border: 5px solid;
+	background-image: url(fat_bike/tread.png);
+
+}
+
+.wheel_inf:after {
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	content: "wide rubber at low pressure = maximum traction";
+	width: 300px;
+
+}
+
+.wheel {
+	position: absolute;
+	top: 313px;
+	left: 470px;
+	width: 280px;
+	height: 270px;
+	border-radius: 100%;
+}
+
+.wheel:after {
+	position: absolute;
+	top: -7px;
+	left: -438px;
+	width: 285px;
+	height: 276px;	
+	content:'';
+	border-radius: 100%;
+}
+
+.brakes_inf {
+	position: absolute;
+	display: none;
+	width: 74px;
+	height: 74px;
+	border-radius: 8px;
+	border: 5px solid;
+	background-image: url(fat_bike/brake.jpg);
+}
+
+.brakes_inf:after {
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	content: "hyrdraulic disc brakes for incredible stoppage and soft hands";
+	width: 300px;
+}
+
+.brakes {
+	position: absolute;
+	top: 403px;
+	left: 569px;
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+
+}
+
+.gears_inf {
+	position: absolute;
+	display: none;
+	width: 74px;
+	height: 74px;
+	border-radius: 8px;
+	border: 5px solid;
+	background-image: url(fat_bike/gears.jpg);
+}
+
+.gears_inf:after {
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	content: "good range for crawling up and blasting down";
+	width: 300px;
+}
+
+.gears {
+	position: absolute;
+	top: 438px;
+	left: 311px;
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+}
+
+.gears:after {
+	position: absolute;
+	top: -37px;
+	left: -168px;
+	width: 75px;
+	height: 96px;
+	border-radius: 100%;
+	content:'';
+}
+
+.frame_inf {
+	position: absolute;
+	display: none;
+	width: 74px;
+	height: 74px;
+	border-radius: 8px;
+	border: 5px solid;
+	background-image: url(fat_bike/frame.jpg);
+}
+
+.frame_inf:after {
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	content: "lightweight aluminum to make it feel skinny";
+	width: 300px;
+}
+
+.frame {
+	position: absolute;
+	top: 203px;
+	left: 324px;
+	width: 157px;
+	height: 197px;
+	transform: skewX(-35deg) rotate(-45deg);
+
+}
+
+.fork_inf {
+	position: absolute;
+	display: none;
+	width: 74px;
+	height: 74px;
+	border-radius: 8px;
+	border: 5px solid;
+	background-image: url(fat_bike/fork.jpg);
+}
+
+.fork_inf:after {
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	content: "substantial squish and really raked out";
+	width: 300px;
+}
+
+.fork {
+	position: absolute;
+	top: 272px;
+	left: 528px;
+	width: 34px;
+	height: 88px;
+	transform: rotate(-23deg);	
+}
+
+.pedal_inf {
+	position: absolute;
+	display: none;
+	width: 74px;
+	height: 74px;
+	border-radius: 8px;
+	border: 5px solid;
+	background-image: url(fat_bike/pedal.jpg);
+}
+
+.pedal_inf:after {
+	position: absolute;
+	top: 0px;
+	left: 100px;
+	content: "grabby pedals keep you on the bike";
+	width: 300px;
+}
+
+.pedal {
+	position: absolute;
+	top: 529px;
+	left: 310px;
+	width: 44px;
+	height: 38px;
+}
