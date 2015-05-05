@@ -1,0 +1,90 @@
+@import url(http://fonts.googleapis.com/css?family=Quintessential|PT+Sans);
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.back {
+	background-image: url(kayak/back.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.container {
+	position: relative;
+	margin: auto;
+	top: 0px;
+	left: 0px;
+	width: 800px;
+	height: 2600px;
+	background-image: url(kayak/front1.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+
+}
+
+.title {
+  position: absolute;
+  top: 248px;
+  left: -110px;
+  width: 120%;
+  font-size: 52pt;
+  color: white;
+  font-family: Quintessential;
+  text-shadow: 2px 2px 2px black;
+  opacity: 0;
+}
+
+.author {
+  position: absolute;
+  top: 370px;
+  left: 320px;
+  width: 100%;
+  color: white;
+  font-family: 'PT+Sans';
+  font-size: 24pt;
+  text-shadow: 2px 2px 2px black;
+  opacity: 0;
+}
+
+.link {
+  position: absolute;
+  top: 421px;
+  left: 400px;
+  width: 330px;
+  font-size: 10pt;
+  opacity: 0;
+}
+
+p {
+	color: white;
+	line-height: 0.1pt;
+	font-size: 24pt;
+	font-family: 'PT+Sans';
+	text-shadow: 2px 2px 2px black;
+}
+
+#verse1 {
+	position: absolute;
+	top: 860px;
+	left: 180px;
+	opacity: 0;
+}
+
+#verse2 {
+	position: absolute;
+	top: 1450px;
+	left: 300px;
+	opacity: 0;
+  
+}
+
+#verse3 {
+	position: absolute;
+	top: 2070px;
+	left: 400px;
+    opacity: 0;
+}
