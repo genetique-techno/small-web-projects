@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="ajax_test.css">
 	<title></title>
 </head>
 <body>
-	<h1>Given JSON data on SEPTA departures from Suburban:</h1>
-	<select class="direction_sel">
-		<option value='northbound'>Northbound</option>
-		<option value='southbound'>Southbound</option>
-	</select>
-	<button id='path_btn'>Route Path</button>
-	<button id='destination_btn'>Destinations</button>
-	<button id="track_btn">Tracks</button>
-	<button id="status_btn">Status</button>
-	<div class="output"></div>
+	<h1>Game Simulator</h1>
+	<table>
+		<tr>
+			<td></td>
+			<td>STATUS</td>
+			<td class="game_status"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>TIME</td>
+			<td class="time_left"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>PERIOD</td>
+			<td class="period"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="t0name"></td>
+			<td class="t1name"></td>
+		</tr>
+		<tr>
+			<td>Scores</td>
+			<td class="t0score"></td>
+			<td class="t1score"></td>
+		</tr>
+		<tr>
+			<td>Shots</td>
+			<td class="t0shots"></td>
+			<td class="t1shots"></td>
+		</tr>
+		<tr>
+			<td>Saves</td>
+			<td class="t0saves"></td>
+			<td class="t1saves"></td>
+		</tr>
+		<tr>
+			<td>Face Offs Won</td>
+			<td class="t0face"></td>
+			<td class="t1face"></td>
+		</tr>
+
+	</table>
+	<div class="bar">
+		<button class='btn' id="stop_btn">PAUSE</button>
+		<button class='btn' id="resume_btn">PLAY</button>
+	</div>
 </body>
-<script src='ajax_test.js'></script>
+<script src='ajax_test.js'></script>	
 </html>
