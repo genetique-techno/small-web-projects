@@ -1,270 +1,79 @@
+var obj;
+var xhr;
+var game_status  = document.querySelector('.game_status');
+var time_left 	 = document.querySelector('.time_left');
+var period 		 = document.querySelector('.period');
+var t0name 		 = document.querySelector('.t0name');
+var t1name		 = document.querySelector('.t1name');
+var t0score 	 = document.querySelector('.t0score');
+var t1score 	 = document.querySelector('.t1score');
+var t0shots 	 = document.querySelector('.t0shots');
+var t1shots 	 = document.querySelector('.t1shots');
+var t0saves 	 = document.querySelector('.t0saves');
+var t1saves	  	 = document.querySelector('.t1saves');
+var t0face  	 = document.querySelector('.t0face');
+var t1face  	 = document.querySelector('.t1face');
+var stop_btn 	 = document.getElementById('stop_btn');
+var resume_btn 	 = document.getElementById('resume_btn');
 
-var obj = {  
-    "Suburban Station Departures: May 4, 2015, 10:09 pm":[  
-        {  
-            "Northbound":[  
-                {  
-                    "direction":"N",
-                    "path":"R8N",
-                    "train_id":"866",
-                    "origin":"Chestnut Hill West",
-                    "destination":"Fox Chase",
-                    "status":"2 min",
-                    "service_type":"LOCAL",
-                    "next_station":"30th Street Station",
-                    "sched_time":"May 4 2015 10:24:00:000PM",
-                    "depart_time":"May 4 2015 10:25:00:000PM",
-                    "track":"1",
-                    "track_change":null,
-                    "platform":"B",
-                    "platform_change":null
-                },
-                {  
-                    "direction":"N",
-                    "path":"R7N",
-                    "train_id":"776",
-                    "origin":"Trenton",
-                    "destination":"Chestnut H East",
-                    "status":"On Time",
-                    "service_type":"LOCAL",
-                    "next_station":"North Philadelphia",
-                    "sched_time":"May 4 2015 10:31:00:000PM",
-                    "depart_time":"May 4 2015 10:32:00:000PM",
-                    "track":"2",
-                    "track_change":null,
-                    "platform":"B",
-                    "platform_change":null
-                },
-                {  
-                    "direction":"N",
-                    "path":"R4N",
-                    "train_id":"9468",
-                    "origin":"Airport Terminal E-F",
-                    "destination":"Temple U",
-                    "status":"On Time",
-                    "service_type":"LOCAL",
-                    "next_station":"Airport Terminal C-D",
-                    "sched_time":"May 4 2015 10:34:00:000PM",
-                    "depart_time":"May 4 2015 10:35:00:000PM",
-                    "track":"2",
-                    "track_change":null,
-                    "platform":"A",
-                    "platform_change":null
-                },
-                {  
-                    "direction":"N",
-                    "path":"R3N",
-                    "train_id":"396",
-                    "origin":"Elwyn",
-                    "destination":"West Trenton",
-                    "status":"On Time",
-                    "service_type":"LOCAL",
-                    "next_station":"Swarthmore",
-                    "sched_time":"May 4 2015 10:45:00:000PM",
-                    "depart_time":"May 4 2015 10:46:00:000PM",
-                    "track":"2",
-                    "track_change":null,
-                    "platform":"A",
-                    "platform_change":null
-                },
-                {  
-                    "direction":"N",
-                    "path":"R2N",
-                    "train_id":"274",
-                    "origin":"Wilmington",
-                    "destination":"Norristown",
-                    "status":"On Time",
-                    "service_type":"LOCAL",
-                    "next_station":"Marcus Hook",
-                    "sched_time":"May 4 2015 10:49:00:000PM",
-                    "depart_time":"May 4 2015 10:50:00:000PM",
-                    "track":"1",
-                    "track_change":null,
-                    "platform":"A",
-                    "platform_change":null
-                }
-            ]
-        },
-        {  
-            "Southbound":[  
-                {  
-                    "direction":"S",
-                    "path":"R3S",
-                    "train_id":"389",
-                    "origin":"Trent",
-                    "destination":"Elwyn",
-                    "status":"19 min",
-                    "service_type":"LOCAL",
-                    "next_station":"Suburban Station",
-                    "sched_time":"May 4 2015 09:54:00:000PM",
-                    "depart_time":"May 4 2015 09:55:00:000PM",
-                    "track":"3",
-                    "track_change":null,
-                    "platform":"A",
-                    "platform_change":null
-                },
-                {  
-                    "direction":"S",
-                    "path":"R5S",
-                    "train_id":"587",
-                    "origin":"Doylestown",
-                    "destination":"Thorndale",
-                    "status":"On Time",
-                    "service_type":"LOCAL",
-                    "next_station":"North Broad St",
-                    "sched_time":"May 4 2015 10:25:00:000PM",
-                    "depart_time":"May 4 2015 10:26:00:000PM",
-                    "track":"4",
-                    "track_change":null,
-                    "platform":"B",
-                    "platform_change":null
-                },
-                {  
-                    "direction":"S",
-                    "path":"R4S",
-                    "train_id":"9471",
-                    "origin":null,
-                    "destination":"Airport",
-                    "status":"On Time",
-                    "service_type":"LOCAL",
-                    "next_station":null,
-                    "sched_time":"May 4 2015 10:29:00:000PM",
-                    "depart_time":"May 4 2015 10:30:00:000PM",
-                    "track":"3",
-                    "track_change":null,
-                    "platform":"B",
-                    "platform_change":null
-                },
-                {  
-                    "direction":"S",
-                    "path":"R2S",
-                    "train_id":"277",
-                    "origin":"Elm",
-                    "destination":"Marcus Hook",
-                    "status":"5 min",
-                    "service_type":"LOCAL",
-                    "next_station":"Manayunk",
-                    "sched_time":"May 4 2015 10:32:00:000PM",
-                    "depart_time":"May 4 2015 10:33:00:000PM",
-                    "track":"4",
-                    "track_change":null,
-                    "platform":"A",
-                    "platform_change":null
-                },
-                {  
-                    "direction":"S",
-                    "path":"R8\/7S",
-                    "train_id":"8775",
-                    "origin":null,
-                    "destination":"Trenton",
-                    "status":"On Time",
-                    "service_type":"LOCAL",
-                    "next_station":null,
-                    "sched_time":"May 4 2015 10:42:00:000PM",
-                    "depart_time":"May 4 2015 10:43:00:000PM",
-                    "track":"4",
-                    "track_change":null,
-                    "platform":"A",
-                    "platform_change":null
-                }
-            ]
-        }
-    ]
-}
+var gameIntervalId;
 
+var offset = 1420598884 + 1260; //should be right at the start of the game
+var add_time = 0;
 
+function api_update (time) {
+	url = 'http://api.onetwosee.com/nhl/update/1443221/rogers?normalize=true&now=' + time;
+	xhr = new XMLHttpRequest();
+	xhr.open("GET", url, true);
+	xhr.onreadystatechange = obj_fill;
+	xhr.send();
+};
 
-// MODELS
-var northbound = obj["Suburban Station Departures: May 4, 2015, 10:09 pm"][0].Northbound;
-var southbound = obj["Suburban Station Departures: May 4, 2015, 10:09 pm"][1].Southbound;
+obj_fill = function () {
+	obj = JSON.parse(xhr.responseText);
+	game_status.innerHTML = obj.game.status;
+	time_left.innerHTML = obj.game.time;
+	
+	period.innerHTML = obj.game.period;
 
-function paths (arr) {
-	return arr.map ( function (item) {
-		return item['path'];
-	} )
-}
+	t0name.innerHTML = obj.teams[0].city + ' ' + obj.teams[0].name;
+	t1name.innerHTML = obj.teams[1].city + ' ' + obj.teams[1].name;	
 
-function tracks (arr) {
-	return arr.map ( function (item) {
-		return item['track'];
-	})
-}
+	t0score.innerHTML = obj.boxscores[0].score;
+	t1score.innerHTML = obj.boxscores[1].score;
 
-function destinations (arr) {
-	return arr.map ( function (item) {
-		return item['destination'];
-	})
-}
+	t0shots.innerHTML = obj.boxscores[0].shots;
+	t1shots.innerHTML = obj.boxscores[1].shots;
 
-function statuses (arr) {
-	return arr.map( function (item) {
-		return item['status'];
-	})
-}
+	t0saves.innerHTML = obj.boxscores[0].saves;
+	t1saves.innerHTML = obj.boxscores[1].saves;
 
-// VIEW
-var output = document.querySelector('.output');
+	t0face.innerHTML = obj.boxscores[0].faceoffsWon;
+	t1face.innerHTML = obj.boxscores[1].faceoffsWon;
 
-function display (arr) {
-	output.innerHTML = '';
-	for (i = 0; i < arr.length; i ++) {
-		var elem = document.createElement('p');
-		elem.innerHTML = arr[i];
-		output.appendChild(elem);
+	if (obj.game.status === 'post-event') {
+		stop_all();
 	}
+};
+
+poll = function () {
+	add_time += 30;
+	api_update(offset + add_time);
+};
+
+resume_sim = function () {
+
+	gameIntervalId = window.setInterval(poll, 5000);
+}
+stop_all = function () {
+	window.clearInterval(gameIntervalId);
 }
 
-// CONTROLLERS
-var direction;
-var direction_sel = document.querySelector('.direction_sel');
-var set_direction = function () {
-	if (direction_sel.value === 'northbound') {
-		direction = northbound;
-	} else if (direction_sel.value === 'southbound') {
-		direction = southbound;
-	}
-	/*
-	switch (direction_sel.value) {
-		case 'northbound':
-			direction = northbound;
-			break;
-		case 'southbound':
-			direction = southbound;
-			break;
-	}
-	*/
-}
+window.addEventListener('load', api_update(offset));
+window.addEventListener('load', resume_sim);
+stop_btn.addEventListener('click', stop_all);
+resume_btn.addEventListener('click', resume_sim);
 
 
-var get_path = function () {
-	var pathlist = paths(direction);
-	display (pathlist);
-};
 
-var get_track = function () {
-	var tracklist = tracks(direction);
-	display (tracklist);
-};
 
-var get_destination = function () {
-	var destinationlist = destinations (direction);
-	display (destinationlist);
-};
-
-var get_status = function () {
-	var statuslist = statuses (direction);
-	display (statuslist);
-};
-
-var path_btn = document.querySelector('#path_btn');
-var track_btn = document.getElementById('track_btn');
-var destination_btn = document.getElementById('destination_btn');
-var status_btn = document.getElementById('status_btn');
-
-path_btn.addEventListener ('click', get_path);
-track_btn.addEventListener ('click', get_track);
-destination_btn.addEventListener ('click', get_destination);
-status_btn.addEventListener ('click', get_status);
-direction_sel.addEventListener ('change', set_direction);
-
-window.addEventListener ('load', set_direction);
